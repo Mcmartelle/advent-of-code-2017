@@ -41,7 +41,11 @@ function mainAdvent (program) {
     steps++;
     oldpc = pc;
     pc += memory[pc];
-    memory[oldpc]++;
+    if(memory[oldpc] >= 3){
+      memory[oldpc]--;
+    } else {
+      memory[oldpc]++;
+    }
   }
   return steps;
 }

@@ -31,7 +31,7 @@ fs.createReadStream(INPUT)
   });
 
 function mainAdvent (program) {
-  // program = [0, 3, 0, 1, -3]; // Test input
+  program = [0, 3, 0, 1, -3];
 
   var memory = program;
   var pc = 0;
@@ -41,7 +41,11 @@ function mainAdvent (program) {
     steps++;
     oldpc = pc;
     pc += memory[pc];
-    memory[oldpc]++;
+    if(memory[oldpc] >= 3){
+      memory[oldpc]--;
+    } else {
+      memory[oldpc]++;
+    }
   }
   return steps;
 }
