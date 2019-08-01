@@ -21,7 +21,7 @@ fs.createReadStream(INPUT)
   .on('end', function(line) {
     const NS_PER_SEC = 1e9;
     const time = process.hrtime();
-    var output = mainAdvent(processed);;
+    var output = mainAdvent(processed);
     const diff = process.hrtime(time);
     console.log('RESULT: ', output);
     console.log(`Benchmark took ${diff[0] * NS_PER_SEC + diff[1]} nanoseconds`);
